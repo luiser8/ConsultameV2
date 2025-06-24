@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PSM_ConsultameV2.Models.RecordCA>
+@{
+    ViewBag.Title = "Mi carga académica";
+}
+<div class="col-md-12">
+    <table class="table table-hover table-striped table-bordered table-responsive">
+        <tr>
+            <th>Código</th>
+            <th>Materia</th>
+            <th>TH</th>
+            <th>UC</th>
+            <th>Aula</th>
+            <th>Turno</th>
+            <th>Sección</th>
+            <th>Semestre</th>
+            <th>CHH</th>
+            <th>Prel</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodMateria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreMateria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreTurno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Semestre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CHH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prel)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

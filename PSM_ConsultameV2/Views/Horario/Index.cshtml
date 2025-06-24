@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Horario Académico";
+}
+
+<div class="container-fluid">
+
+    <!-- Encabezado -->
+    <div class="row">
+        <div class="col-xs-1"><strong>Hora</strong></div>
+        <div class="col-xs-2"><strong>Lunes</strong></div>
+        <div class="col-xs-2"><strong>Martes</strong></div>
+        <div class="col-xs-2"><strong>Miércoles</strong></div>
+        <div class="col-xs-2"><strong>Jueves</strong></div>
+        <div class="col-xs-2"><strong>Viernes</strong></div>
+        <div class="col-xs-1"><strong>Sábado</strong></div>
+    </div>
+
+    <div id="schedule-grid"></div>
+</div>
+
+<!-- Scripts -->
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/moment")
+
+<script>
+    $(function () {
+        $.getJSON('@Url.Action("ObtenerHorario", "Horario")', function (data) {
+            if (!data || !data.length) return;
+
+            // Obtener horas únicas y ordenarlas
+            const horas = [...new Set(data.map(x => x.Hora.trim().toLowerCase()))]
+                .sort((a, b) => moment(a, "hh:mm a") - moment(b, "hh:mm a"));
+
+            // Crear filas por hora
+            horas.forEach(hora => {
+                let row = '<div class="row">';
+                row += `<div class="col-xs-1 time-label">${hora}</div>`;
+
+                // Crear celdas vacías
+                for (let dia = 1; dia <= 6; dia++) {
+                    const colClass = (dia === 6) ? 'col-xs-1' : 'col-xs-2';
+                    row += `<div class="${colClass} day-cell" data-dia="${dia}" data-hora="${hora}"></div>`;
+                }
+                row += '</div>';
+                $('#schedule-grid').append(row);
+            });
+
+            // Insertar clases
+            data.forEach(item => {
+                const hora = item.Hora.trim().toLowerCase();
+                const dia = parseInt(item.DiaID || item.Dia);
+
+                if (dia >= 1 && dia <= 6) {
+                    const selector = `.day-cell[data-dia="${dia}"][data-hora="${hora}"]`;
+                    const html = `
+                        <div class="class-item">
+                            <b>(${item.IdMateria}) ${item.Materia}</b>
+                            <b>Docente: ${item.Docente}</b>
+                            <b>Lapso: ${item.Lapso}</b>
+                            <b>Sección: ${item.Seccion}</b>
+                            <b>Aula: ${item.Aula}</b>
+                            <b>Bloque: ${item.Bloque}</b>
+                        </div>`;
+                    $(selector).append(html);
+                }
+            });
+
+            // Marcar celdas vacías como "empty"
+            $('.day-cell').each(function () {
+                if ($(this).is(':empty')) {
+                    $(this).addClass('empty-cell');
+                }
+            });
+        });
+    });
+</script>

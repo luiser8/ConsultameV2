@@ -1,0 +1,53 @@
+﻿.table-responsive {
+    overflow-x: auto;
+}
+
+.day-cell {
+    min-height: 70px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 2px;
+    font-size: 12px;
+    transition: min-height 0.2s;
+}
+
+.empty-cell {
+    min-height: 28px !important;
+    min-width: 10px !important;
+    background-color: #f0f0f0;
+}
+
+.class-item {
+    background-color: #d9edf7;
+    border-left: 4px solid #31708f;
+    margin-bottom: 0px;
+    padding: 5px;
+}
+
+    .class-item b {
+        display: block;
+    }
+
+.time-label {
+    padding: 2.5px 5px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: #eaeaea;
+}
+
+@media (max-width: 767px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .time-label,
+    .day-cell {
+        width: 100% !important;
+    }
+
+    .class-item {
+        font-size: 13px;
+    }
+}

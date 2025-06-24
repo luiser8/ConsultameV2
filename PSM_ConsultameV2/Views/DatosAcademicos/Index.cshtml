@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PSM_ConsultameV2.Models.RecordDA>
+
+@{
+    ViewBag.Title = "Datos Académicos";
+}
+
+<div class="col-md-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title" style="font-weight: bold">Datos académicos</h3>
+        </div>
+        @foreach (var item in Model)
+        {
+        <div class="panel-body">
+            <p><strong>Nombres y apellidos</strong>: <span class="badge">@Html.DisplayFor(modelIte => item.FullNombre)</span></p>
+            <p><strong>Lapso ingreso</strong>: <span class="badge">@Html.DisplayFor(modelItem => item.LapIng)</span></p>
+            <p><strong>Lapso anterior</strong>: <span class="badge">@Html.DisplayFor(modelItem => item.LapAnt)</span></p>
+            <p><strong>Lapso curso</strong>: <span class="badge">@Html.DisplayFor(modelItem => item.LapCur)</span></p>
+            <p><strong>Iraa</strong>: <span class="badge">@Html.DisplayFor(modelItem => item.Iraa)</span></p>
+            <p><strong>UCC</strong>: <span class="badge">@Html.DisplayFor(modelItem => item.UCC)</span></p>
+            <p><strong>UCA</strong>: <span class="badge">@Html.DisplayFor(modelItem => item.UCA)</span></p>
+            <p><strong>Estado académico</strong>: <span class="badge"> @Html.DisplayFor(modelItem => item.EstAca)</span></p>
+            <p><strong>Código carrera</strong>: <span class="badge">@Html.DisplayFor(modelItem => item.Codcarrera)</span></p>
+            <p><strong>Área</strong>: <span class="badge">@Html.DisplayFor(modelItem => item.Area)</span></p>
+            <p><strong>Descripción título</strong>: <span class="badge">@Html.DisplayFor(modelItem => item.Descripciontitulo)</span></p>
+
+        </div>
+        }
+
+    </div>
+</div>

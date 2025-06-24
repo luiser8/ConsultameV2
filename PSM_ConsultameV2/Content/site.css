@@ -1,0 +1,154 @@
+﻿/* ===== CSS ORIGINAL (MANTENIDO) ===== */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+.form-control, .input-xs, .input-sm, .input-md, .input-lg, .btn {
+    border-radius: 0px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.glyphicon {
+    font-size: 1em!important ;
+}
+
+.error {
+    font-size: 270px;
+}
+
+#login {
+    margin-top: 13% !important;
+}
+
+.navbar-nav > li > a.profile-image {
+    margin-right: 5px;
+    float: left;
+    background: url(example.jpg) 50% 50% no-repeat;
+    background-size: auto 100%;
+    width: 20px;
+    height: 20px;
+}
+
+.navbar-right {
+    margin-bottom: -60px;
+}
+
+.breadcrumb {
+    background-color: transparent !important;
+    margin-top: -2%;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: auto;
+}
+
+/* ===== MEJORAS ESPECÍFICAS PARA EL MENÚ USUARIO ===== */
+/* Foto de perfil */
+#foto {
+    width: 40px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    max-width: 40px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0px 5px 0 0;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    vertical-align: middle;
+}
+
+/* Contenedor del toggle */
+.dropdown-toggle {
+    padding: 3px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Nombre de usuario */
+.username-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 8px 0 5px;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #fff;
+}
+
+/* Dropdown menu */
+.navbar-right .dropdown-menu {
+    margin-top: 5px !important;
+    right: 19px;
+    left: auto;
+    min-width: 200px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: none;
+}
+
+/* Items del dropdown */
+.dropdown-menu > li > a {
+    color: #000 !important;
+    transition: all 0.2s;
+}
+
+/* Flecha del dropdown */
+.caret {
+    margin-left: 5px !important;
+    transition: transform 0.2s;
+}
+
+.open .caret {
+    transform: rotate(180deg);
+}
+
+/* Ajustes para móviles */
+@media (max-width: 767px) {
+    #foto {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    .username-text {
+        max-width: 120px;
+        font-size: 13px;
+    }
+
+    .dropdown-toggle {
+        padding: 10px 8px !important;
+    }
+
+    .navbar-right .dropdown-menu {
+        right: 5px;
+    }
+}
+
+/* Fallback para imágenes */
+img[src=""], img:not([src]) {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    display: inline-block;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff !important;
+}

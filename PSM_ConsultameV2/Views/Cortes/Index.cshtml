@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PSM_ConsultameV2.Models.RecordCV>
+@{
+    ViewBag.Title = "Cortes";
+}
+<div class="col-md-12">
+    <table class="table table-hover table-striped table-bordered table-responsive">
+        <tr>
+            <th>Código</th>
+            <th>Materia</th>
+            <th>TH</th>
+            <th>UC</th>
+            <th>Primer corte</th>
+            <th>Segundo corte</th>
+            <th>Tercer corte</th>
+            <th>Definitiva</th>
+            <th>Semestre</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codmateria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreMateria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Corte1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Corte2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Corte3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Definitiva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Semestre)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

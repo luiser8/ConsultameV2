@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PSM_ConsultameV2.Models.RecordNA>
+@{
+    ViewBag.Title = "Mis calificaciones";
+}
+<div class="col-md-12">
+    <table class="table table-hover table-striped table-bordered table-responsive">
+        <tr>
+            <th width="70px;">Lapso</th>
+            <th>Código</th>
+            <th width="600px;">Materia</th>
+            <th>Calificación</th>
+            <th>Sección</th>
+            <th>Equivalencia</th>
+            <th>Semestre</th>
+            <th>HT</th>
+            <th>HP</th>
+            <th>HL</th>
+            <th>TH</th>
+            <th>UC</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lapso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codmateria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreMateria)
+                </td>
+
+                @if (@item.Calificacion < 10)
+                {
+                    <td class="alert alert-danger">
+                        @Html.DisplayFor(modelItem => item.Calificacion)
+                    </td>
+                }
+                else
+                {
+                    <td class="alert alert-success">
+                        @Html.DisplayFor(modelItem => item.Calificacion)
+                    </td>
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seccion)
+                </td>
+                <td>
+                    @if (@item.Equivalencia == 1)
+                    {
+                        <span class="text-success">SÍ</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">NO</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Semestre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UC)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
