@@ -167,9 +167,11 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HorarioController.cs" />
+    <Compile Include="Controllers\MateriasController.cs" />
     <Compile Include="DAL\DALrecordCA.cs" />
     <Compile Include="DAL\DALrecordCV.cs" />
     <Compile Include="DAL\DALrecordHA.cs" />
+    <Compile Include="DAL\DALrecordMV.cs" />
     <Compile Include="DAL\DALrecordNA.cs" />
     <Compile Include="DAL\DALrecordDA.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,11 +180,10 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\RecordCV.cs" />
     <Compile Include="Models\RecordDA.cs" />
+    <Compile Include="Models\RecordMV.cs" />
     <Compile Include="Models\RecordNA.cs" />
     <Compile Include="Models\RecordCA.cs" />
     <Compile Include="Models\RecordHA.cs" />
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.1.AssemblyAttributes.cs" />
-    <Compile Include="obj\Release\.NETFramework,Version=v4.8.1.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\CustomDataTable.cs" />
   </ItemGroup>
@@ -245,9 +246,12 @@
     <Content Include="Views\CargaAcademica\Index.cshtml" />
     <Content Include="Views\Horario\Index.cshtml" />
     <Content Include="Views\Cortes\Index.cshtml" />
+    <Content Include="Views\Materias\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\" />
+    <Folder Include="obj\Release\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
